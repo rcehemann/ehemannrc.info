@@ -3,21 +3,81 @@
   {%- include "navbar.html" -%}
 {% endwith %}
 <body>
-  <div class="container">
-    <p>
-      Web presence built with <strong>Bulma</strong>!
-    </p>
-
+  <div class="container has-text-centered">
     <article>
-    \icon{MapMarker}{16}{7388 Stone Valley Lane}\\
-    \icon{EllipsisV}{16}{New Albany, OH 43054}\\
-    \icon{Phone}{16}{+1 931 588 1446}\\
-    \icon{At}{16}{\href{mailto:rcehemann@gmail.com}{rcehemann@gmail.com}}\\ 
-    \icon{Linkedin}{16}{\href{https://www.linkedin.com/in/robert-c-ehemann/}{R.C. Ehemann}}\\
-    \icon{Github}{16}{\href{https://github.com/rcehemann}{github.com/rcehemann}}\\
+      <div class="columns">
+        <div class="column is-4">
+          <figure class="image is-128x128">
+            <img src="{{ url_for('static', filename='images/headshot.png') }}" class="is-rounded">
+          </figure>
+        </div>
+        <div class="column is-8">
+          <table class="about-table">
+          <tr>
+            <td>
+              <span class="icon has-text-dark is-large">
+                <i class="fa fa-2x fa-map-marker"></i>
+              </span>
+            </td>
+            <td>
+              New Albany, OH
+            </td>
+            <td style="align:right;">
+              <a href="https://www.linkedin.com/in/robert-c-ehemann/">
+                LinkedIn Profile
+              </a>
+            </td>
+            <td style="align:right;">
+              <span class="icon has-text-dark is-large">
+                <i class="fa fa-2x fa-linkedin"></i>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="icon has-text-dark is-large">
+                <i class="fa fa-2x fa-phone"></i>
+              </span>
+            </td>
+            <td>
+              +1 931 588 1446
+            </td>
+            <td style="align:right;">
+              <a href="https://github.com/rcehemann/">
+                GitHub Page
+              </a>
+            </td>  
+            <td style="align:right;">
+              <span class="icon has-text-dark is-large">
+                <i class="fa fa-2x fa-github"></i>
+              </span>
+            </td>          
+          </tr>
+          <tr>
+            <td>
+              <span class="icon has-text-dark is-large">
+                <i class="fa fa-2x fa-at"></i>
+              </span>
+            </td>
+            <td>
+              <a href="mailto:rcehemann@gmail.com">
+                rcehemann@gmail.com
+              </a>
+            </td>
+            <td style="align:right;">
+              <a href="https://www.instagram.com/blenderhead89/">
+                Instagram
+              </a>
+            </td>
+            <td style="align:right;">
+              <span class="icon has-text-dark is-large">
+                <i class="fa fa-2x fa-instagram"></i>
+              </span>
+            </td>
+          </tr>
+        </table>
+      </div>
     </article>
-
-    <a href="{{ url_for('docs', doc='resume') }}">Resume</a>
   </div>
 </body>
 {%- include "footer.html" -%}

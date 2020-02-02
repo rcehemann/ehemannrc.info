@@ -28,5 +28,5 @@ def favicon():
                           mimetype='image/vnd.microsoft.icon')
 
 if __name__ == "__main__":
-	#run_simple('127.0.0.1', 5000, app, threaded=True)
-	app.run(host=os.environ.get("IP", '127.0.0.1'), port=5000, debug=True)
+	app.run(host=os.environ.get("IP", "127.0.0.1"), port=5000,
+		threaded=True, debug=True)

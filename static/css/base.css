@@ -6,6 +6,12 @@ html, body {
     height: 100%;
 }
 
+body .container div {
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
 .hero {
 	padding-top: 100px;
 	padding-bottom: 100px;
@@ -35,6 +41,19 @@ body {
 	padding-left: 15px;
 	padding-right: 15px;
 }
+
+.about-table {
+	width: 100%;
+}
+
+.about-table table {
+	width: 95%;
+}
+
+.about-table td {
+	vertical-align: middle;
+}
+
 
 nav {
 	font-color: white;
