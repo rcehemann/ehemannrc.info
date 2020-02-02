@@ -6,7 +6,6 @@ html, body {
     height: 100%;
 }
 
-
 .hero {
 	padding-top: 100px;
 	padding-bottom: 100px;
@@ -15,6 +14,7 @@ html, body {
 .hero h1 {
 	padding-top: 10px;
 	font-variant: small-caps;
+	font-weight: bold;
 	font-size: 48px;
 }
 
@@ -34,4 +34,34 @@ body {
 	background-color: white;
 	padding-left: 15px;
 	padding-right: 15px;
+}
+
+nav {
+	font-color: white;
+}
+
+.navbar {
+	background-color: #615176;
+}
+
+.navbar-item {
+	color: #e6e6e6;
+	background-color: #615176;
+}
+.navbar-item.is-hoverable.is-tab:hover {
+	color: white;
+	background-color: black;
+	border-color: black;
+}
+.navbar-item.is-hoverable.is-tab.is-active {
+	color: white;
+	background-color: black;
+}
+.navbar-item.is-tab.is-active {
+	color: white;
+	border-color: black;
+}
+
+a.navbar-item.is-active:not(:focus):not(:hover) {
+    background-color: hsl(0, 0%, 21%);
 }

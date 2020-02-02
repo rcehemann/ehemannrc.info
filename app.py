@@ -4,11 +4,34 @@ import os
 app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 app.config["STATIC_DIR"] = os.getcwd() + "/static/"
-@app.route("/index")
+
+def render(page):
+	return render_template("{}.html".format(page))
+
 @app.route("/")
+@app.route("/index")
 def index():
-	#return render_template(url_for("static", filename="templates/index.html"))
-	return render_template("index.html")
+	return render("index")
+
+@app.route("/experience")
+def experience():
+	return render("experience")
+
+@app.route("/education")
+def education():
+	return render("education")
+
+@app.route("/publications")
+def publications():
+	return render("publications")
+
+@app.route("/presentations")
+def presentations():
+	return render("presentations")
+
+@app.route("/awards")
+def awards():
+	return render("awards")
 
 @app.route("/resume")
 def resume():

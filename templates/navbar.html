@@ -1,0 +1,28 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand" height="204" style="margin:0;padding:0">
+        <div class="navbar-item">
+        	<i class="fa fa-bank"></i>
+        </div>
+    </div>
+    <div class="navbar-start is-success">
+        {%- set page_names = {
+            'index':'About',
+            'experience':'Experience',
+            'education':'Education',
+            'publications':'Publications',
+            'presentations':'Presentations',
+            'awards':'Awards and Honors'
+        } -%}
+        {%- for page, name in page_names.items() -%}
+            {%- if active == page -%}
+                <a class="navbar-item is-hoverable is-tab is-active" href="{{ url_for(page) }}">
+                    {{ name }}
+                </a>
+            {%- else -%}
+                <a class="navbar-item is-hoverable is-tab" href="{{ url_for(page) }}">
+                    {{ name }}
+                </a>        
+            {%- endif -%}
+        {%- endfor -%}
+    </div>
+</nav>

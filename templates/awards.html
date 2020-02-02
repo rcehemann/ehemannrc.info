@@ -1,0 +1,12 @@
+{%- include "header.html" -%}
+{%- with active=self._TemplateReference__context.name.split('.')[0] -%}
+  {%- include "navbar.html" -%}
+{% endwith %}
+<body>
+  <div class="container">
+    <p>
+      Web presence built with <strong>Bulma</strong>!
+    </p>
+  </div>
+</body>
+{%- include "footer.html" -%}
