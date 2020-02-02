@@ -1,0 +1,37 @@
+* {
+	font-family: Raleway;
+}
+
+html, body {
+    height: 100%;
+}
+
+
+.hero {
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
+.hero h1 {
+	padding-top: 10px;
+	font-variant: small-caps;
+	font-size: 48px;
+}
+
+.hero h6 {
+	font-variant: small-caps;
+	font-size: 18px;
+	padding-bottom: 10px;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #959595;
+}
+
+.container {
+	background-color: white;
+	padding-left: 15px;
+	padding-right: 15px;
+}
