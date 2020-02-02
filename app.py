@@ -1,43 +1,32 @@
-from flask import Flask, url_for, render_template, send_file
+from flask import Flask, url_for, render_template, send_from_directory, redirect
 import os
 
 app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
-app.config["STATIC_DIR"] = os.getcwd() + "/static/"
 
 def render(page):
 	return render_template("{}.html".format(page))
 
 @app.route("/")
-@app.route("/index")
 def index():
-	return render("index")
+	return redirect(url_for('home', page="about"))
 
-@app.route("/experience")
-def experience():
-	return render("experience")
+@app.route("/home/<page>")
+def home(page):
+	return render(page)
 
-@app.route("/education")
-def education():
-	return render("education")
+@app.route("/docs/<doc>")
+def docs(doc):
+	return send_from_directory(os.path.join(app.root_path, "static"),
+						  "docs/rcehemann-{}.pdf".format(doc),
+						  mimetype="application/pdf")
 
-@app.route("/publications")
-def publications():
-	return render("publications")
-
-@app.route("/presentations")
-def presentations():
-	return render("presentations")
-
-@app.route("/awards")
-def awards():
-	return render("awards")
-
-@app.route("/resume")
-def resume():
-	return send_file(app.config['STATIC_DIR'] + "docs/ehemannrc.pdf",
-					mimetype="application/pdf")
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                          'images/favicon.ico',
+                          mimetype='image/vnd.microsoft.icon')
 
 if __name__ == "__main__":
 	#run_simple('127.0.0.1', 5000, app, threaded=True)
-	app.run(host='127.0.0.1', port=5000, debug=True)
+	app.run(host=os.environ.get("IP", '127.0.0.1'), port=5000, debug=True)

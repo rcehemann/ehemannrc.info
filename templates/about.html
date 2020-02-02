@@ -1,0 +1,23 @@
+{%- include "header.html" -%}
+{%- with active=self._TemplateReference__context.name.split('.')[0] -%}
+  {%- include "navbar.html" -%}
+{% endwith %}
+<body>
+  <div class="container">
+    <p>
+      Web presence built with <strong>Bulma</strong>!
+    </p>
+
+    <article>
+    \icon{MapMarker}{16}{7388 Stone Valley Lane}\\
+    \icon{EllipsisV}{16}{New Albany, OH 43054}\\
+    \icon{Phone}{16}{+1 931 588 1446}\\
+    \icon{At}{16}{\href{mailto:rcehemann@gmail.com}{rcehemann@gmail.com}}\\ 
+    \icon{Linkedin}{16}{\href{https://www.linkedin.com/in/robert-c-ehemann/}{R.C. Ehemann}}\\
+    \icon{Github}{16}{\href{https://github.com/rcehemann}{github.com/rcehemann}}\\
+    </article>
+
+    <a href="{{ url_for('docs', doc='resume') }}">Resume</a>
+  </div>
+</body>
+{%- include "footer.html" -%}
