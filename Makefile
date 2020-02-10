@@ -1,5 +1,6 @@
 documents:
 	@echo "Cloning resume repository..."
+	mkdir docs
 	git clone https://github.com/rcehemann/resume tmp
 	mv tmp/main.pdf ./static/docs/rcehemann-resume.pdf
 	mv tmp/main.tex ./static/docs/resume.tex
@@ -15,3 +16,9 @@ dev: documents
 prod: documents
 	@echo "Deploying to production"
 	sudo /usr/local/bin/gunicorn --bind 0.0.0.0:80 app:app
+
+clean:
+	rm -rf docs
+	rm -rf tmp
+	rm -rf tmp2
+	rm -rf __pycache__
