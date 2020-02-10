@@ -1,0 +1,241 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Developer CV
+% LaTeX Template
+% Version 1.0 (28/1/19)
+%
+% This template originates from:
+% http://www.LaTeXTemplates.com
+%
+% Authors:
+% Jan Vorisek (jan@vorisek.me)
+% Based on a template by Jan Küster (info@jankuester.com)
+% Modified for LaTeX Templates by Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% The MIT License (see included LICENSE file)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[9pt]{developercv} % Default font size, values from 8-12pt are recommended
+\usepackage{amssymb}
+%----------------------------------------------------------------------------------------
+
+\definecolor{bgcolor}{rgb}{0.85,0.85,0.85}
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE AND CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\header}[1]{\begin{tikzpicture}[remember picture,overlay]
+    \node[yshift=-4cm] at (current page.north west)
+      {\begin{tikzpicture}[remember picture, overlay]
+        \draw[fill=gray,line width=0pt] (0,0) rectangle
+          (\paperwidth,4cm);
+        \node[anchor=east,xshift=0.95\paperwidth,rectangle,
+              rounded corners=20pt,inner sep=11pt, yshift=1.65cm,
+              fill=gray]
+              {#1};
+       \end{tikzpicture}
+      };
+   \end{tikzpicture}
+\vspace{2.5cm}
+  }
+
+\header{
+
+\vspace{12pt}
+\begin{minipage}[t]{0.44\textwidth} % 45% of the page width for name
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	% If your name is very short, use just one of the lines below
+	% If your name is very long, reduce the font size or make the minipage wider and reduce the others proportionately
+
+	
+	\textcolor{white}{\HUGE\textbf{\MakeUppercase{R. Chris}}} % First name
+	\vspace{-6pt}
+
+	\HUGE\textbf{\MakeUppercase{Ehemann}}
+%	\Huge\textbf{\MakeUppercase{Ehemann}} % Last name
+
+	\vspace{-20pt}
+
+	{\Large Ph.D., Data Scientist} % Career or current job title
+
+\end{minipage}\hfill
+\begin{minipage}[t]{0.28\textwidth} % 27.5% of the page width for the first row of icons
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	% The first parameter is the FontAwesome icon name, the second is the box size and the third is the text
+	% Other icons can be found by referring to fontawesome.pdf (supplied with the template) and using the word after \fa in the command for the icon you want
+	\icon{MapMarker}{16}{New Albany, OH 43054}\\
+	\icon{Phone}{16}{+1 931 588 1446}\\
+	\icon{At}{16}{\href{mailto:rcehemann@gmail.com}{rcehemann@gmail.com}}\\	
+
+
+\end{minipage}
+\begin{minipage}[t]{0.28\textwidth} % 27.5% of the page width for the second row of icons
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	% The first parameter is the FontAwesome icon name, the second is the box size and the third is the text
+	% Other icons can be found by referring to fontawesome.pdf (supplied with the template) and using the word after \fa in the command for the icon you want
+	\icon{Laptop}{16}{\href{http://ehemannrc.info}{ehemannrc.info}}\\	
+	\icon{Linkedin}{16}{\href{https://www.linkedin.com/in/robert-c-ehemann/}{R.C. Ehemann}}\\
+	\icon{Github}{16}{\href{https://github.com/rcehemann}{github.com/rcehemann}}\\
+
+\end{minipage}
+
+}
+%\vspace{0.5cm}
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION, SKILLS AND TECHNOLOGIES
+%----------------------------------------------------------------------------------------
+
+
+\begin{minipage}[t]{0.5\textwidth}
+	%\vspace{-\baselineskip} % Required for vertically aligning minipages
+	\begin{minipage}[t]{\textwidth} % 40% of the page width for the introduction text	
+	\Large Driven, creative, and charismatic\\computational problem-solver\\ % Dummy text
+	\end{minipage}
+
+	\vspace{-\baselineskip}
+	\cvsect{Gears}{Tools \& Techniques}
+
+	\begin{minipage}[t]{\textwidth}
+%	\vspace{1pt}
+	\foreach \tool in {Jupyter,Pandas,Scikit-learn,Keras,PyMC3,Statsmodels,XGBoost,ARIMA,GARCH,Flask,Dash,Plotly,Seaborn,MPL,nonlinear programming,evolutionary programming}{\tech{\tool}}
+	\end{minipage}
+\end{minipage}
+\hfill % Whitespace between
+\begin{minipage}[t]{0.45\textwidth} % 50% of the page for the skills bar chart
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	\vspace{0.5cm}
+	\begin{barchart}{5.5}
+		\baritem{Python}{95}
+		\baritem{bash}{75}
+		\baritem{Julia}{55}
+		\baritem{JS/HTML}{45}
+		\baritem{SQL}{45}
+		\baritem{Git}{55}
+		\baritem{R}{25}
+
+	\end{barchart}
+\end{minipage}
+
+%\begin{center}
+%	\bubbles{6/optimization, 0/, 5/time series, 0/, 4/full-stack, 0/, 5/visualization, 0/, 6/communication}
+%\end{center}
+
+%----------------------------------------------------------------------------------------
+%	EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\cvsect{Briefcase}{Experience}
+
+\begin{entrylist}
+	\entry
+		{May 2019 --\\ Present}
+		{Manufacturing Data Scientist}
+		{Owens Corning}
+		{Primary data scientist in Owens Corning's Advanced Manufacturing organization. Supported organizational objectives of productivity and cost take-out by building predictive models of manufacturing processes, partnering with SMEs to test "tribal knowledge" with big data and visualization, performing numerous statistical analyses and mentoring other analytics practitioners. As a corporate resource, also provided analytics support to product development and marketing teams throughout OC.\\ \foreach \tool in {Python,Julia,SQL}{\tech{\tool}}}
+	\entry
+		{Jan 2018 --\\ May 2019}
+		{Data Scientist}
+		{Owens Corning}
+		{Formative member of a data science team in Owens Corning Science \& Technology. Focused on accelerating product development by building predictive and prescriptive applications for product performance/optimization and leveraging large historical datasets for statistical analyses published and/or presented internally. Led three interns while managing multiple projects with competing priorities. \\ \foreach \tool in {Python,JavaScript}{\tech{\tool}}}
+	\entry
+		{2010 \& 2011\\\footnotesize{June -- August}}
+		{Intern, Atomic \& Molecular Physics}
+		{Oak Ridge National Laboratory}
+		{Leveraged world-class supercomputing resources to model the interaction of hydrogen atoms with carbon nano-structures using classical and semi-classical simulation techniques.\\ \foreach \tool in {HPC,bash,Fortran}{\tech{\tool}}}
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+
+\cvsect{GraduationCap}{Education}
+
+\begin{entrylist}
+	\entry
+		{December 2018}
+		{Ph.D.}
+		{The Ohio State University}
+		{Physics, 4.0, {\emph{Specialization: Computational materials physics}} \\ Utilized high-performance computing to optimize physical models of atomic-level interactions in metals using evolutionary algorithms.\\ \foreach \tool in {Python,bash,C++,HPC}{\tech{\tool}}}
+	\entry
+		{May 2015}
+		{Master of Science}
+		{The Ohio State University}
+		{Physics, 4.0}
+	\entry
+		{May 2012}
+		{Bachelor of Science}
+		{Middle Tennessee State University}
+		{Physics and Mathematics, 3.9}
+\end{entrylist}
+\clearpage
+%----------------------------------------------------------------------------------------
+%	ADDITIONAL INFORMATION
+%----------------------------------------------------------------------------------------
+
+\cvsect{FileText}{Publications}
+\begin{entrylist}
+	\entry
+		{}
+		{}
+		{}
+		{%
+\vspace{-2\baselineskip}
+\renewcommand{\labelitemi}{\textcolor{gray}{$\blacksquare$}}
+\begin{itemize}
+\setlength{\itemindent}{-1cm}
+\item Two Trade Secrets, 2019.
+\item Using Analytics to Stay Ahead of the Curve in B2B Markets. C. Skinner and R. C. Ehemann, \emph{2018 BGSU Business Anallytics Symposium} (2018).
+\item Force-matched interatomic potentials for tungsten and titanium-niobium. The Ohio State University, December 2017.
+\item Force-matched empirical potential for martensitic transitions and plastic deformation in Ti-Nb alloys. R. C. Ehemann and J. W. Wilkins. {\emph{Physical Review B}} {\bf{96}}, 184105 (2017)
+\item {\emph{Ab initio}} based empirical potential applied to tungsten at high pressure. R. C. Ehemann, J. W. Nicklas, H. Park and J. W. Wilkins. {\emph{Physical Review B}} {\bf{95}}, 184101 (2017)
+\item Detection of hydrogen using graphene. R. C. Ehemann, P. S. Krstic, J. Dadras, P. R. Kent and J. Jakowski. {\emph{Nanoscale Research Letters}} {\bf{7}}, 198 (2012)
+\end{itemize}}
+\end{entrylist}
+
+\cvsect{Commenting}{Presentations}
+\begin{entrylist}
+	\entry{}{}{}{
+\vspace{-2\baselineskip}
+\renewcommand{\labelitemi}{\textcolor{gray}{$\blacksquare$}}
+\begin{itemize}
+	\setlength{\itemindent}{-1cm}
+	\item \emph{Artificial Intelligence and Machine Learning: Theory and Application in Owens Corning S\&T}, Owens Corning S\&T Tech Talk, April and May 2019. 
+	\item \emph{It's a Bird, It's a Blade, it's Super-H!}, Poster (co-author), Owens Corning Science \& Technology Poster Session, 2018.  Awarded best poster.
+	\item \emph{Innovating Innovation}, Poster, Owens Corning Science \& Technology Poster Session, 2018.
+	\item \emph{A Novel Empirical Potential for Modeling Martensitic Transformations in Ti-Nb Alloys}, Poster, OSU Materials Week 2016. Awarded best poster.
+	\item \emph{Atomistic Modeling of Ti-Nb Alloys}, Poster, Ohio Supercomputing Center Statewide Users Group Meeting 2015. Awarded best poster.
+	\item \emph{Toward a Versatile Molecular Dynamics Potential for the Ti-Nb Alloy System}, Poster, OSU Materials Week 2015.
+\end{itemize}}
+\end{entrylist}
+
+\cvsect{Star}{Awards \& Honors}
+\begin{entrylist}
+	\entry{}{}{}{
+\vspace{-2\baselineskip}
+\renewcommand{\labelitemi}{\textcolor{gray}{$\blacksquare$}}
+\begin{itemize}
+	\setlength{\itemindent}{-1cm}
+ \item Slater Innovation Award, Owens Corning Science \& Technology, 2018. Awarded for the development of a high-impact predictive model
+ \item Trumbull Asphalt Breakthrough Award, Owens Corning, 2018.
+ \item Winner, Owens Corning Science \& Technology Poster Session, 2018
+ \item University Fellowship, The Ohio State University Graduate School, 2012--2016 
+ \item Fowler Fellowship, The Ohio State University Department of Physics, 2012--2014 
+ \item Barry M. Goldwater Scholarship, Barry Goldwater Scholarship \& Excellence in Education Foundation, 2011--2012
+\end{itemize}}
+\end{entrylist}
+
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
