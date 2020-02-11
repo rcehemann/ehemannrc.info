@@ -3,10 +3,23 @@
   {%- include "navbar.html" -%}
 {% endwith %}
 <body>
-  <div class="container">
-    <p>
-      Web presence built with <strong>Bulma</strong>!
-    </p>
+  <div class="container resume-items">
+
+  	<h1> Experience </h1>
+  	{% for item in experience %}
+  	<div class="resume-item">
+  		{{ item }}
+  	</div>
+  	{% endfor %}
+
+  	<hr>
+  	<h1> Education </h1>
+  	{% for item in education %}
+  	<div class="resume-item">
+  		{{ item }}
+  	</div>
+  	{% endfor %}
+
   </div>
 </body>
 {%- include "footer.html" -%}

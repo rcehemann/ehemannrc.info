@@ -1,13 +1,15 @@
 documents:
 	@echo "Cloning resume repository..."
-	mkdir docs
-	git clone https://github.com/rcehemann/resume tmp
-	mv tmp/main.pdf ./static/docs/rcehemann-resume.pdf
-	mv tmp/main.tex ./static/docs/resume.tex
-	rm -rf tmp
-	git clone https://gist.github.com/rcehemann/25c57f517e012456318379f6c826830b.git tmp
-	mv tmp/rcehemann-dissertation.pdf ./static/docs/
-	rm -rf tmp
+	if ! [ -d static/docs ]; then \
+		mkdir static/docs; \
+		git clone https://github.com/rcehemann/resume tmp; \
+		mv tmp/main.pdf ./static/docs/rcehemann-resume.pdf; \
+		mv tmp/main.tex ./static/docs/resume.tex; \
+		rm -rf tmp; \
+		git clone https://gist.github.com/rcehemann/25c57f517e012456318379f6c826830b.git tmp; \
+		mv tmp/rcehemann-dissertation.pdf ./static/docs/; \
+		rm -rf tmp; \
+	fi
 
 dev: documents
 	@echo "Configuring development environment"

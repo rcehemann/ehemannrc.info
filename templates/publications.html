@@ -3,11 +3,36 @@
   {%- include "navbar.html" -%}
 {% endwith %}
 <body>
-  <div class="container">
-    <p>
-      Web presence built with <strong>Bulma</strong>!
-    </p>
-    <a href="{{ url_for('docs', doc='dissertation') }}">Ph. D. Dissertation</a>
+  <div class="container resume-items">
+  	
+  	<h1> Publications </h1>
+  	{% for item in publications %}
+  	<p class="resume-item">
+  		{% if 'The Ohio State University' in item %}
+  			&#x25A0; {{ item|safe }}
+  			<a href="{{ url_for('docs', doc='dissertation') }}">  PDF</a>
+  		{% else %}
+  			&#x25A0; {{ item|safe }}
+  		{% endif %}
+  	</p>
+  	{% endfor %}
+
+  	<hr>
+  	<h1> Presentations </h1>
+  	{% for item in presentations %}
+  	<p class="resume-item">
+  		&#x25A0; {{ item|safe }}
+	</p>
+  	{% endfor %}
+
+  	<hr>
+  	<h1> Awards & Honors </h1>
+  	{% for item in awards %}
+  	<p class="resume-item">
+  		&#x25A0; {{ item|safe }}
+  	</p>
+  	{% endfor %}
+
   </div>
 </body>
 {%- include "footer.html" -%}

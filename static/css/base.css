@@ -4,6 +4,8 @@
 
 html, body {
     height: 100%;
+    background-color: #959595;
+    color: black;
 }
 
 body .container div {
@@ -11,7 +13,9 @@ body .container div {
 	padding-right: 50px;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	color: black;
 }
+
 .hero {
 	padding-top: 100px;
 	padding-bottom: 100px;
@@ -54,7 +58,6 @@ body {
 	vertical-align: middle;
 }
 
-
 nav {
 	font-color: white;
 }
@@ -71,22 +74,27 @@ nav {
 	padding-top: 0.5%;
 	padding-bottom: 0.5%
 }
+
 .navbar-brand img {
 	height: 95%;
 }
+
 .navbar-item {
 	color: #e6e6e6;
 	background-color: #615176;
 }
+
 .navbar-item.is-hoverable.is-tab:hover {
 	color: white;
 	background-color: black;
 	border-color: black;
 }
+
 .navbar-item.is-hoverable.is-tab.is-active {
 	color: white;
 	background-color: black;
 }
+
 .navbar-item.is-tab.is-active {
 	color: white;
 	border-color: black;
@@ -94,4 +102,17 @@ nav {
 
 a.navbar-item.is-active:not(:focus):not(:hover) {
     background-color: hsl(0, 0%, 21%);
+}
+
+.resume-items h1 {
+	font-weight: bold;
+	font-size: 32px;
+}
+
+.resume-item {
+	margin-bottom: 0px;
+	margin-top: 0px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	font-size: 16px;
 }
