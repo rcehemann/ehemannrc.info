@@ -5,21 +5,33 @@
 <body>
   <div class="container resume-items">
 
+    {% set styles=["{}", "<strong>{}</strong>", "<em>{}</em>", "{}"] %}
   	<h1> Experience </h1>
-  	{% for item in experience %}
-  	<div class="resume-item">
-  		{{ item }}
-  	</div>
-  	{% endfor %}
+    <table>
+    {% for item in experience %}
+      <tr>
+        {% for element in item %}
+          <td class="resume-item">
+            {{ styles[loop.index0].format(element)|safe }}
+          </td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+    </table> 
 
   	<hr>
   	<h1> Education </h1>
+    <table>
   	{% for item in education %}
-  	<div class="resume-item">
-  		{{ item }}
-  	</div>
+      <tr>
+        {% for element in item %}
+        	<td class="resume-item">
+        		{{ styles[loop.index0].format(element)|safe }}
+        	</td>
+        {% endfor %}
+      </tr>
   	{% endfor %}
-
+    </table> 
   </div>
 </body>
 {%- include "footer.html" -%}

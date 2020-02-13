@@ -116,3 +116,9 @@ a.navbar-item.is-active:not(:focus):not(:hover) {
 	padding-top: 5px;
 	font-size: 16px;
 }
+
+.resume-items td {
+	padding-left: 10px;
+	padding-right: 10px;
+	min-width: 150px;
+}
