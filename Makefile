@@ -1,5 +1,4 @@
 documents:
-	@echo "Cloning resume repository..."
 	if ! [ -d static/docs ]; then \
 		mkdir static/docs; \
 		git clone https://github.com/rcehemann/resume tmp; \
@@ -20,7 +19,7 @@ prod: documents
 	sudo /usr/local/bin/gunicorn --bind 0.0.0.0:80 app:app
 
 clean:
-	rm -rf docs
+	rm -rf static/docs
 	rm -rf tmp
 	rm -rf tmp2
 	rm -rf __pycache__
