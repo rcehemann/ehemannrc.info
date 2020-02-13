@@ -27,7 +27,6 @@ def parse_cv_section(title, pattern='items'):
 	if pattern == 'items':
 		return list(map(clean, elements))
 	elif pattern == 'entries':
-		print(r"{}".format(section))
 		return list(map(lambda t: list(map(clean, t)), elements))
 
 if __name__ == '__main__':
